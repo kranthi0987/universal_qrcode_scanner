@@ -33,32 +33,32 @@ function getAgencyProfileURL() {
     return SERVER_URL_HEAD + "/GetAssessorAgency/?AssessorId=" + AssessorID;
 }
 
-function getDropDown(){
+function getDropDown() {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/GetDropDowns";
     return SERVER_URL_HEAD + "/GetDropDowns/?AssessorId=" + AssessorID;
 }
 
-function getStateLookUpURL(){
+function getStateLookUpURL() {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/GetStates";
     return SERVER_URL_HEAD + "/GetStates";
 }
 
-function getDistrictLookUpURL(stateId){
+function getDistrictLookUpURL(stateId) {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/GetDistricts/?stateId=" + stateId;
     return SERVER_URL_HEAD + "/GetDistricts/?stateId=" + stateId;
 }
 
-function getSubDistrictLookUpURL(stateId, distId){
+function getSubDistrictLookUpURL(stateId, distId) {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/GetDistricts/?stateId=" + stateId;
     return SERVER_URL_HEAD + "/GetSubDistricts/?stateId=" + stateId + "&districtId=" + distId;
 }
 
-function getAddressLookUpURL(pin){
+function getAddressLookUpURL(pin) {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/GetAddress/?Pincode=" + pin;
     return SERVER_URL_HEAD + "/GetAddress/?Pincode=" + pin;
 }
 
-function getUpdateAssessorProfileURL(){
+function getUpdateAssessorProfileURL() {
 //    return "http://kranthi0987-001-site1.itempurl.com/api/assessormobile/UpdateAssessorProfile";
     return SERVER_URL_HEAD + "/UpdateAssessorProfile";
 }

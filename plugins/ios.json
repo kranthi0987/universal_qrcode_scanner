@@ -22,6 +22,12 @@
     "phonegap-plugin-barcodescanner": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "PACKAGE_NAME": "com.nsdc.qrcodescanner"
+    },
+    "cordova-admob": {
+      "PACKAGE_NAME": "com.nsdc.qrcodescanner"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.nsdc.qrcodescanner"
     }
   },
   "dependent_plugins": {
@@ -29,6 +35,12 @@
       "PACKAGE_NAME": "com.nsdc.qrcodescanner"
     },
     "org.apache.cordova.home": {
+      "PACKAGE_NAME": "com.nsdc.qrcodescanner"
+    },
+    "cordova-connectivity-monitor": {
+      "PACKAGE_NAME": "com.nsdc.qrcodescanner"
+    },
+    "cordova-libgoogleadmobads": {
       "PACKAGE_NAME": "com.nsdc.qrcodescanner"
     }
   }

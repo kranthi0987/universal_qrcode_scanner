@@ -1,4 +1,4 @@
-    #loginPageContainer {
+#loginPageContainer {
     width: 100%;
     height: 100%;
 }
@@ -430,6 +430,7 @@ a {
     margin: 65px;
     border-radius: 10px;
 }
+
 .logo-login2 {
     height: 80px;
     background-image: url(../imgs/skillindia-NSDC.png);
@@ -1834,29 +1835,31 @@ html.w-mod-js *[data-ix="list-item"] {
     .mobile-wrapper {
         width: 100%;
     }
-    
+
 }
+
 @media (max-width: 330px) {
     .logo-login {
-    height: 85px;
-    background-image: url(../imgs/pmkylogo.png);
-    background-position: 50% 50%;
-    background-size: 125px;
-    background-repeat: no-repeat;
-    background-color: white;
-    margin: 65px;
-    border-radius: 10px;
+        height: 85px;
+        background-image: url(../imgs/pmkylogo.png);
+        background-position: 50% 50%;
+        background-size: 125px;
+        background-repeat: no-repeat;
+        background-color: white;
+        margin: 65px;
+        border-radius: 10px;
         margin-bottom: 15px;
-}
+    }
+
     .logo-login2 {
-    height: 83px;
-    background-image: url(../imgs/skillindia-NSDC.png);
-    background-position: 35% 50%;
-    background-repeat: no-repeat;
+        height: 83px;
+        background-image: url(../imgs/skillindia-NSDC.png);
+        background-position: 35% 50%;
+        background-repeat: no-repeat;
+    }
+
 }
-    
-    
-}
+
 @media (min-width: 600px) {
     .right-input-link {
         position: absolute;
@@ -1864,7 +1867,6 @@ html.w-mod-js *[data-ix="list-item"] {
         right: 26px;
     }
 }
-
 
 /* Extra */
 
@@ -2017,11 +2019,9 @@ textarea:focus {
     .body .logo-login2 {
         display: none;
     }
-    
+
 }
-    
- 
-    
+
 #loginPage .link-upper {
     display: inline-block;
     color: white;
@@ -2030,18 +2030,17 @@ textarea:focus {
     text-decoration: none;
 }
 
-
-    .right-input-link {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        display: inline-block;
-        width: 26%;
-        height: 50px;
-        padding-right: 30px;
-        color: hsla(0, 0%, 100%, .83);
-        font-size: 11px;
-        line-height: 50px;
-        text-align: right;
-        text-decoration: none;
-    }
+.right-input-link {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    width: 26%;
+    height: 50px;
+    padding-right: 30px;
+    color: hsla(0, 0%, 100%, .83);
+    font-size: 11px;
+    line-height: 50px;
+    text-align: right;
+    text-decoration: none;
+}

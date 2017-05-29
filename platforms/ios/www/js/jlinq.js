@@ -116,7 +116,9 @@ var jl;
                         removed: [],
 
                         //tells a query to start a new function
-                        or: function () { self.startNewCommandSet(); },
+                        or: function () {
+                            self.startNewCommandSet();
+                        },
 
                         //the query creator object
                         query: {}
@@ -172,10 +174,11 @@ var jl;
                             //each set represents an 'or' set - if any
                             //match then return this worked
                             var set = self.commands[command];
-                            if (self.evaluateSet(set, state)) { return true; }
+                            if (self.evaluateSet(set, state)) {
+                                return true;
+                            }
 
-                        };
-
+                        }
                         //since nothing evaluated, return it failed
                         return false;
 
@@ -190,17 +193,25 @@ var jl;
                             //get the details to use
                             var command = set[item];
                             state.value = self.findValue(state.record, command.path);
-                            state.compare = function (types) { return framework.util.compare(state.value, types, state); };
-                            state.when = function (types) { return framework.util.when(state.value, types, state); };
+                            state.compare = function (types) {
+                                return framework.util.compare(state.value, types, state);
+                            };
+                            state.when = function (types) {
+                                return framework.util.when(state.value, types, state);
+                            };
 
                             //evaluate the command
                             try {
                                 var result = command.method.apply(state, command.args);
-                                if (command.not) { result = !result; }
-                                if (!result) { return false; }
+                                if (command.not) {
+                                    result = !result;
+                                }
+                                if (!result) {
+                                    return false;
+                                }
                             }
-                            //errors and exceptions just result in a failed
-                            //to evaluate as true
+                                //errors and exceptions just result in a failed
+                                //to evaluate as true
                             catch (e) {
                                 return false;
                             }
@@ -217,7 +228,9 @@ var jl;
                     repeat: function (arguments) {
 
                         //check if there is anything to repeat
-                        if (!self.instance.lastCommand || arguments == null) { return; }
+                        if (!self.instance.lastCommand || arguments == null) {
+                            return;
+                        }
 
                         //get the array of arguments to work with
                         arguments = framework.util.toArray(arguments);
@@ -329,9 +342,9 @@ var jl;
 
                     }
 
-                        //Selections commands flush the queue of commands
-                        //before they are executed. A selection command
-                        //must return something (even if it is the current query)
+                    //Selections commands flush the queue of commands
+                    //before they are executed. A selection command
+                    //must return something (even if it is the current query)
                     else if (command.type == framework.command.select) {
                         self.instance.query[command.name] = function () {
 
@@ -340,23 +353,31 @@ var jl;
 
                             //get the current state of the query
                             var state = self.instance;
-                            state.compare = function (value, types) { return framework.util.compare(value, types, state); };
-                            state.when = function (value, types) { return framework.util.when(value, types, state); };
+                            state.compare = function (value, types) {
+                                return framework.util.compare(value, types, state);
+                            };
+                            state.when = function (value, types) {
+                                return framework.util.when(value, types, state);
+                            };
 
                             //perform the work
                             return command.method.apply(state, arguments);
                         };
                     }
 
-                        //actions evaluate immediately then return control to
-                        //the query 
+                    //actions evaluate immediately then return control to
+                    //the query
                     else if (command.type == framework.command.action) {
                         self.instance.query[command.name] = function () {
 
                             //get the current state of the query
                             var state = self.instance;
-                            state.compare = function (value, types) { return framework.util.compare(value, types, state); };
-                            state.when = function (value, types) { return framework.util.when(value, types, state); };
+                            state.compare = function (value, types) {
+                                return framework.util.compare(value, types, state);
+                            };
+                            state.when = function (value, types) {
+                                return framework.util.when(value, types, state);
+                            };
 
                             //perform the work
                             command.method.apply(state, arguments);
@@ -439,7 +460,7 @@ var jl;
                 if (framework.util.isType(framework.type.array, obj)) {
                     return framework.util.cloneArray(obj);
                 }
-                    //for object check each value
+                //for object check each value
                 else if (framework.util.isType(framework.type.object, obj)) {
                     var clone = {};
                     for (var item in obj) {
@@ -447,7 +468,7 @@ var jl;
                     }
                     return clone;
                 }
-                    //all other types just return the value
+                //all other types just return the value
                 else {
                     return obj;
                 }
@@ -497,7 +518,7 @@ var jl;
                     return framework.util.invoke(obj, path);
 
                 }
-                    //if this referring to a field
+                //if this referring to a field
                 else if (framework.util.isType(framework.type.string, path)) {
 
                     //get each part of the path
@@ -513,7 +534,7 @@ var jl;
                     return obj;
 
                 }
-                    //nothing that can be read, just return the value
+                //nothing that can be read, just return the value
                 else {
                     return obj;
                 }
@@ -547,7 +568,9 @@ var jl;
 
             //converts a command to an operator name
             operatorName: function (name) {
-                return name.replace(/^\w/, function (match) { return match.toUpperCase(); });
+                return name.replace(/^\w/, function (match) {
+                    return match.toUpperCase();
+                });
             },
 
             //changes a value based on the type
@@ -572,7 +595,9 @@ var jl;
                 }
 
                 //if there is a fallback comparison
-                if (types.other) { return types.other.apply(state, [value]); }
+                if (types.other) {
+                    return types.other.apply(state, [value]);
+                }
 
                 //no matches were found
                 return null;
@@ -599,7 +624,9 @@ var jl;
             until: function (collection, action) {
                 for (var item = 0, l = collection.length; item < l; item++) {
                     var result = action(collection[item], item + 1);
-                    if (result === true) { return true; }
+                    if (result === true) {
+                        return true;
+                    }
                 }
                 return false;
             },
@@ -613,11 +640,15 @@ var jl;
             getType: function (obj) {
 
                 //check if this even has a value
-                if (obj == null) { return framework.type.nothing; }
+                if (obj == null) {
+                    return framework.type.nothing;
+                }
 
                 //check each type except object
                 for (var item in framework.library.types) {
-                    if (framework.library.types[item](obj)) { return item; }
+                    if (framework.library.types[item](obj)) {
+                        return item;
+                    }
                 }
 
                 //no matching type was found
@@ -652,7 +683,9 @@ var jl;
 
                 //get the next field to use
                 var field = fields.splice(0, 1);
-                if (field.length == 0) { return collection; }
+                if (field.length == 0) {
+                    return collection;
+                }
                 field = field[0];
 
                 //get the name of the field and descending or not
@@ -663,7 +696,11 @@ var jl;
 
                 //updat the name if needed
                 if (desc) {
-                    if (invoked) { field[0] = name; } else { field = name; }
+                    if (invoked) {
+                        field[0] = name;
+                    } else {
+                        field = name;
+                    }
                 }
 
                 //IE sorting bug resolved (Thanks @rizil)
@@ -677,18 +714,27 @@ var jl;
                     var b = framework.util.findValue(val2, field);
 
                     //default to something when null
-                    if (a == null && b == null) { a = 0; b = 0; }
-                    else if (a == null && b != null) { a = 0; b = 1; }
-                    else if (a != null && b == null) { a = 1; b = 0; }
+                    if (a == null && b == null) {
+                        a = 0;
+                        b = 0;
+                    }
+                    else if (a == null && b != null) {
+                        a = 0;
+                        b = 1;
+                    }
+                    else if (a != null && b == null) {
+                        a = 1;
+                        b = 0;
+                    }
 
-                        //check for string values
+                    //check for string values
                     else if (ignoreCase &&
                         framework.util.isType(framework.type.string, a) &&
                         framework.util.isType(framework.type.string, b)) {
                         a = a.toLowerCase();
                         b = b.toLowerCase();
                     }
-                        //if there is a length attribute use it instead
+                    //if there is a length attribute use it instead
                     else if (a.length && b.length) {
                         a = a.length;
                         b = b.length;
@@ -758,7 +804,9 @@ var jl;
                             val1,
                             ignoreCase);
                     },
-                    other: function () { return (val1 == null && val2 == null) || (val1 === val2); }
+                    other: function () {
+                        return (val1 == null && val2 == null) || (val1 === val2);
+                    }
                 });
             },
 
@@ -766,7 +814,9 @@ var jl;
             toArray: function (obj) {
                 var items = [];
                 if (obj.length) {
-                    for (var i = 0; i < obj.length; i++) { items.push(obj[i]); }
+                    for (var i = 0; i < obj.length; i++) {
+                        items.push(obj[i]);
+                    }
                 }
                 else {
                     for (var item in obj) {
@@ -827,8 +877,7 @@ var jl;
                         return create;
 
                     };
-                };
-
+                }
                 //if there is a selection method, use it
                 if (jLinq.util.isType(jLinq.type.method, action)) {
                     for (var i = 0; i < results.length; i++) {
@@ -846,14 +895,30 @@ var jl;
     };
 
     //default types
-    framework.library.addType(framework.type.nothing, function (value) { return value == null; });
-    framework.library.addType(framework.type.array, function (value) { return value instanceof Array; });
-    framework.library.addType(framework.type.string, function (value) { return value.substr && value.toLowerCase; });
-    framework.library.addType(framework.type.number, function (value) { return value.toFixed && value.toExponential; });
-    framework.library.addType(framework.type.regex, function (value) { return value instanceof RegExp; });
-    framework.library.addType(framework.type.bool, function (value) { return value == true || value == false; });
-    framework.library.addType(framework.type.method, function (value) { return value instanceof Function; });
-    framework.library.addType(framework.type.datetime, function (value) { return value instanceof Date; });
+    framework.library.addType(framework.type.nothing, function (value) {
+        return value == null;
+    });
+    framework.library.addType(framework.type.array, function (value) {
+        return value instanceof Array;
+    });
+    framework.library.addType(framework.type.string, function (value) {
+        return value.substr && value.toLowerCase;
+    });
+    framework.library.addType(framework.type.number, function (value) {
+        return value.toFixed && value.toExponential;
+    });
+    framework.library.addType(framework.type.regex, function (value) {
+        return value instanceof RegExp;
+    });
+    framework.library.addType(framework.type.bool, function (value) {
+        return value == true || value == false;
+    });
+    framework.library.addType(framework.type.method, function (value) {
+        return value instanceof Function;
+    });
+    framework.library.addType(framework.type.datetime, function (value) {
+        return value instanceof Date;
+    });
 
     //add the default methods
     framework.library.extend([
@@ -886,7 +951,9 @@ var jl;
         {
             name: "each", type: framework.command.action,
             method: function (action) {
-                jLinq.util.each(this.records, function (record) { action(record); });
+                jLinq.util.each(this.records, function (record) {
+                    action(record);
+                });
             }
         },
 
@@ -895,8 +962,16 @@ var jl;
             name: "attach", type: framework.command.action,
             method: function (field, action) {
                 this.when(action, {
-                    method: function () { jLinq.util.each(this.records, function (record) { record[field] = action(record); }); },
-                    other: function () { jLinq.util.each(this.records, function (record) { record[field] = action; }); }
+                    method: function () {
+                        jLinq.util.each(this.records, function (record) {
+                            record[field] = action(record);
+                        });
+                    },
+                    other: function () {
+                        jLinq.util.each(this.records, function (record) {
+                            record[field] = action;
+                        });
+                    }
                 });
             }
         },
@@ -943,8 +1018,12 @@ var jl;
             name: "starts", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return jLinq.util.equals(this.value[0], value, this.ignoreCase); },
-                    other: function () { return jLinq.util.regexMatch(("^" + jLinq.util.regexEscape(value)), this.value, this.ignoreCase); }
+                    array: function () {
+                        return jLinq.util.equals(this.value[0], value, this.ignoreCase);
+                    },
+                    other: function () {
+                        return jLinq.util.regexMatch(("^" + jLinq.util.regexEscape(value)), this.value, this.ignoreCase);
+                    }
                 });
             }
         },
@@ -954,8 +1033,12 @@ var jl;
             name: "ends", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return jLinq.util.equals(this.value[this.value.length - 1], value, this.ignoreCase); },
-                    other: function () { return jLinq.util.regexMatch((jLinq.util.regexEscape(value) + "$"), this.value, this.ignoreCase); }
+                    array: function () {
+                        return jLinq.util.equals(this.value[this.value.length - 1], value, this.ignoreCase);
+                    },
+                    other: function () {
+                        return jLinq.util.regexMatch((jLinq.util.regexEscape(value) + "$"), this.value, this.ignoreCase);
+                    }
                 });
             }
         },
@@ -967,9 +1050,13 @@ var jl;
                 return this.compare({
                     array: function () {
                         var ignoreCase = this.ignoreCase;
-                        return jLinq.util.until(this.value, function (item) { return jLinq.util.equals(item, value, ignoreCase); });
+                        return jLinq.util.until(this.value, function (item) {
+                            return jLinq.util.equals(item, value, ignoreCase);
+                        });
                     },
-                    other: function () { return jLinq.util.regexMatch(jLinq.util.regexEscape(value), this.value, this.ignoreCase); }
+                    other: function () {
+                        return jLinq.util.regexMatch(jLinq.util.regexEscape(value), this.value, this.ignoreCase);
+                    }
                 });
             }
         },
@@ -981,9 +1068,13 @@ var jl;
                 return this.compare({
                     array: function () {
                         var ignoreCase = this.ignoreCase;
-                        return jLinq.util.until(this.value, function (item) { return jLinq.util.regexMatch(value, item, ignoreCase); });
+                        return jLinq.util.until(this.value, function (item) {
+                            return jLinq.util.regexMatch(value, item, ignoreCase);
+                        });
                     },
-                    other: function () { return jLinq.util.regexMatch(value, this.value, this.ignoreCase); }
+                    other: function () {
+                        return jLinq.util.regexMatch(value, this.value, this.ignoreCase);
+                    }
                 });
             }
         },
@@ -1001,9 +1092,15 @@ var jl;
             name: "greater", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return this.value.length > value; },
-                    string: function () { return this.value.length > value; },
-                    other: function () { return this.value > value; }
+                    array: function () {
+                        return this.value.length > value;
+                    },
+                    string: function () {
+                        return this.value.length > value;
+                    },
+                    other: function () {
+                        return this.value > value;
+                    }
                 });
             }
         },
@@ -1013,9 +1110,15 @@ var jl;
             name: "greaterEquals", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return this.value.length >= value; },
-                    string: function () { return this.value.length >= value; },
-                    other: function () { return this.value >= value; }
+                    array: function () {
+                        return this.value.length >= value;
+                    },
+                    string: function () {
+                        return this.value.length >= value;
+                    },
+                    other: function () {
+                        return this.value >= value;
+                    }
                 });
             }
         },
@@ -1025,9 +1128,15 @@ var jl;
             name: "less", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return this.value.length < value; },
-                    string: function () { return this.value.length < value; },
-                    other: function () { return this.value < value; }
+                    array: function () {
+                        return this.value.length < value;
+                    },
+                    string: function () {
+                        return this.value.length < value;
+                    },
+                    other: function () {
+                        return this.value < value;
+                    }
                 });
             }
         },
@@ -1037,9 +1146,15 @@ var jl;
             name: "lessEquals", type: framework.command.query,
             method: function (value) {
                 return this.compare({
-                    array: function () { return this.value.length <= value; },
-                    string: function () { return this.value.length <= value; },
-                    other: function () { return this.value <= value; }
+                    array: function () {
+                        return this.value.length <= value;
+                    },
+                    string: function () {
+                        return this.value.length <= value;
+                    },
+                    other: function () {
+                        return this.value <= value;
+                    }
                 });
             }
         },
@@ -1049,9 +1164,15 @@ var jl;
             name: "between", type: framework.command.query,
             method: function (low, high) {
                 return this.compare({
-                    array: function () { return this.value.length > low && this.value.length < high; },
-                    string: function () { return this.value.length > low && this.value.length < high; },
-                    other: function () { return this.value > low && this.value < high; }
+                    array: function () {
+                        return this.value.length > low && this.value.length < high;
+                    },
+                    string: function () {
+                        return this.value.length > low && this.value.length < high;
+                    },
+                    other: function () {
+                        return this.value > low && this.value < high;
+                    }
                 });
             }
         },
@@ -1061,9 +1182,15 @@ var jl;
             name: "betweenEquals", type: framework.command.query,
             method: function (low, high) {
                 return this.compare({
-                    array: function () { return this.value.length >= low && this.value.length <= high; },
-                    string: function () { return this.value.length >= low && this.value.length <= high; },
-                    other: function () { return this.value >= low && this.value <= high; }
+                    array: function () {
+                        return this.value.length >= low && this.value.length <= high;
+                    },
+                    string: function () {
+                        return this.value.length >= low && this.value.length <= high;
+                    },
+                    other: function () {
+                        return this.value >= low && this.value <= high;
+                    }
                 });
             }
         },
@@ -1073,9 +1200,15 @@ var jl;
             name: "empty", type: framework.command.query,
             method: function () {
                 return this.compare({
-                    array: function () { return this.value.length == 0; },
-                    string: function () { return jLinq.util.trim(this.value).length == 0; },
-                    other: function () { return this.value == null; }
+                    array: function () {
+                        return this.value.length == 0;
+                    },
+                    string: function () {
+                        return jLinq.util.trim(this.value).length == 0;
+                    },
+                    other: function () {
+                        return this.value == null;
+                    }
                 });
             }
         },
@@ -1085,8 +1218,12 @@ var jl;
             name: "is", type: framework.command.query,
             method: function () {
                 return this.compare({
-                    bool: function () { return this.value === true; },
-                    other: function () { return this.value != null; }
+                    bool: function () {
+                        return this.value === true;
+                    },
+                    other: function () {
+                        return this.value != null;
+                    }
                 });
             }
         },
@@ -1140,9 +1277,15 @@ var jl;
             name: "skip", type: framework.command.select,
             method: function (skip, selection) {
                 this.records = this.when(selection, {
-                    method: function () { return jLinq.util.skipTake(this.records, selection, skip, null); },
-                    object: function () { return jLinq.util.skipTake(this.records, selection, skip, null); },
-                    other: function () { return jLinq.util.skipTake(this.records, null, skip, null); }
+                    method: function () {
+                        return jLinq.util.skipTake(this.records, selection, skip, null);
+                    },
+                    object: function () {
+                        return jLinq.util.skipTake(this.records, selection, skip, null);
+                    },
+                    other: function () {
+                        return jLinq.util.skipTake(this.records, null, skip, null);
+                    }
                 });
                 return this.query;
             }
@@ -1153,9 +1296,15 @@ var jl;
             name: "take", type: framework.command.select,
             method: function (take, selection) {
                 return this.when(selection, {
-                    method: function () { return jLinq.util.skipTake(this.records, selection, null, take); },
-                    object: function () { return jLinq.util.skipTake(this.records, selection, null, take); },
-                    other: function () { return jLinq.util.skipTake(this.records, null, null, take); }
+                    method: function () {
+                        return jLinq.util.skipTake(this.records, selection, null, take);
+                    },
+                    object: function () {
+                        return jLinq.util.skipTake(this.records, selection, null, take);
+                    },
+                    other: function () {
+                        return jLinq.util.skipTake(this.records, null, null, take);
+                    }
                 });
             }
         },
@@ -1165,9 +1314,15 @@ var jl;
             name: "skipTake", type: framework.command.select,
             method: function (skip, take, selection) {
                 return this.when(selection, {
-                    method: function () { return jLinq.util.skipTake(this.records, selection, skip, take); },
-                    object: function () { return jLinq.util.skipTake(this.records, selection, skip, take); },
-                    other: function () { return jLinq.util.skipTake(this.records, null, skip, take); }
+                    method: function () {
+                        return jLinq.util.skipTake(this.records, selection, skip, take);
+                    },
+                    object: function () {
+                        return jLinq.util.skipTake(this.records, selection, skip, take);
+                    },
+                    other: function () {
+                        return jLinq.util.skipTake(this.records, null, skip, take);
+                    }
                 });
             }
         },
@@ -1177,9 +1332,15 @@ var jl;
             name: "select", type: framework.command.select,
             method: function (selection) {
                 return this.when(selection, {
-                    method: function () { return jLinq.util.select(this.records, selection); },
-                    object: function () { return jLinq.util.select(this.records, selection); },
-                    other: function () { return this.records; }
+                    method: function () {
+                        return jLinq.util.select(this.records, selection);
+                    },
+                    object: function () {
+                        return jLinq.util.select(this.records, selection);
+                    },
+                    other: function () {
+                        return this.records;
+                    }
                 });
             }
         },
@@ -1208,9 +1369,15 @@ var jl;
             name: "define", type: framework.command.select,
             method: function (selection) {
                 var results = this.when(selection, {
-                    method: function () { return jLinq.util.select(this.records, selection); },
-                    object: function () { return jLinq.util.select(this.records, selection); },
-                    other: function () { return this.records; }
+                    method: function () {
+                        return jLinq.util.select(this.records, selection);
+                    },
+                    object: function () {
+                        return jLinq.util.select(this.records, selection);
+                    },
+                    other: function () {
+                        return this.records;
+                    }
                 });
                 return jLinq.from(results);
             }
@@ -1280,9 +1447,15 @@ var jl;
             name: "removed", type: framework.command.select,
             method: function (selection) {
                 return this.when(selection, {
-                    method: function () { return jLinq.util.select(this.removed, selection); },
-                    object: function () { return jLinq.util.select(this.removed, selection); },
-                    other: function () { return this.removed; }
+                    method: function () {
+                        return jLinq.util.select(this.removed, selection);
+                    },
+                    object: function () {
+                        return jLinq.util.select(this.removed, selection);
+                    },
+                    other: function () {
+                        return this.removed;
+                    }
                 });
             }
         },
@@ -1296,12 +1469,16 @@ var jl;
                 var state = this;
                 var matches = [];
                 jLinq.util.each(this.records, function (record) {
-                    if (compare.apply(state, [record]) === true) { matches.push(record); }
+                    if (compare.apply(state, [record]) === true) {
+                        matches.push(record);
+                    }
                 });
 
                 //create a new query with matching arguments
                 var query = jLinq.from(matches);
-                if (!this.ignoreCase) { query.useCase(); }
+                if (!this.ignoreCase) {
+                    query.useCase();
+                }
                 return query;
             }
         }
@@ -1325,7 +1502,9 @@ var jl;
         type: framework.type,
 
         //allows command to be added to the library
-        extend: function () { framework.library.extend.apply(null, arguments); },
+        extend: function () {
+            framework.library.extend.apply(null, arguments);
+        },
 
         //core function to start and entirely new query
         query: function (collection, params) {
@@ -1334,7 +1513,7 @@ var jl;
 
         //starts a new query with the array provided
         from: function (collection) {
-            return framework.library.query(collection, { clone: false });
+            return framework.library.query(collection, {clone: false});
         },
 
         //returns a list of commands in the library
@@ -1345,8 +1524,8 @@ var jl;
                     typeId: command.type,
                     type: command.type == framework.command.select ? "select"
                         : command.type == framework.command.query ? "query"
-                        : command.type == framework.command.action ? "action"
-                        : "unknown"
+                            : command.type == framework.command.action ? "action"
+                                : "unknown"
                 };
             });
         },

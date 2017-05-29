@@ -21,6 +21,12 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.nsdc.certificateverify"
+    },
+    "cordova-admob": {
+      "PACKAGE_NAME": "com.sanjay.qrcode"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.sanjay.qrcode"
     }
   },
   "dependent_plugins": {
@@ -29,6 +35,9 @@
     },
     "org.apache.cordova.home": {
       "PACKAGE_NAME": "com.nsdc.certificateverify"
+    },
+    "cordova-connectivity-monitor": {
+      "PACKAGE_NAME": "com.sanjay.qrcode"
     }
   }
 }

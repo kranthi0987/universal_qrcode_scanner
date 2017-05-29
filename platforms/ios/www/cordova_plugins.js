@@ -40,6 +40,36 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.barcodeScanner"
         ]
+    },
+    {
+        "id": "cordova-connectivity-monitor.connectivity",
+        "file": "plugins/cordova-connectivity-monitor/www/connectivity.js",
+        "pluginId": "cordova-connectivity-monitor",
+        "clobbers": [
+            "window.connectivity"
+        ]
+    },
+    {
+        "id": "cordova-admob.AdMobAds",
+        "file": "plugins/cordova-admob/www/admob.js",
+        "pluginId": "cordova-admob",
+        "clobbers": [
+            "window.admob",
+            "window.tappx"
+        ]
+    },
+    {
+        "id": "cordova-plugin-x-toast.Toast",
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "pluginId": "cordova-plugin-x-toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "id": "cordova-plugin-x-toast.tests",
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "pluginId": "cordova-plugin-x-toast"
     }
 ];
 module.exports.metadata = 
@@ -51,7 +81,11 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.6.1",
     "cordova-plugin-whitelist": "1.3.0",
     "org.apache.cordova.home": "0.2.6",
-    "phonegap-plugin-barcodescanner": "6.0.5"
+    "phonegap-plugin-barcodescanner": "6.0.5",
+    "cordova-connectivity-monitor": "1.2.2",
+    "cordova-libgoogleadmobads": "7.13.1",
+    "cordova-admob": "4.1.16",
+    "cordova-plugin-x-toast": "2.6.0"
 };
 // BOTTOM OF METADATA
 });

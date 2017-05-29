@@ -1634,6 +1634,7 @@ img#splashLogo {
     padding-top: 45px;
     position: absolute;
 }
+
 img.homelogo {
     margin-top: -74px;
     margin-left: -112px;
@@ -1641,11 +1642,11 @@ img.homelogo {
     position: fixed;
     bottom: 30%;
     left: 50%;
- }
+}
+
 input.select-dropdown {
     margin: -29px -29px 0 0;
 }
-
 
 #schduleList .card {
     display: block;
@@ -1669,7 +1670,6 @@ div#scheduleContainer .contentview {
     color: white;
     width: 40px;
 }
-
 
 .ion-ios-close-empty:before {
     font-size: 35px;
@@ -1706,7 +1706,6 @@ div#scheduleContainer .contentview {
 
 */
 
-
 #marksUpdateList h3 {
     padding-left: 10px;
     background-color: #12a794;
@@ -1731,6 +1730,7 @@ div#scheduleContainer .contentview {
     margin-left: 4px;
     color: gray;
 }
+
 .idNumber {
     word-wrap: break-word;
 }
@@ -1741,24 +1741,25 @@ div#scheduleContainer .contentview {
     padding-bottom: 60px;
 }
 
-.assesorprofile{
+.assesorprofile {
 
 }
-
-
 
 .col.title {
     font-size: 13px;
 }
+
 .col.value {
     font-size: 13px;
 }
+
 #detailsList {
     border-bottom: #dcdcdc 1px solid;
     margin-top: -10px;
     padding-bottom: 15px;
     margin-bottom: -25px;
 }
+
 .histDetailsCont .card {
     width: 49.5%;
     float: left;
@@ -1776,13 +1777,12 @@ div#scheduleContainer .contentview {
 }
 
 div#addressdetails {
-     margin-bottom: -10px; 
+    margin-bottom: -10px;
 }
 
 #agencyDetailsContainer #detailsList {
     margin-top: 15px;
 }
-
 
 #assessorProfilePageEdit .select-wrapper input.select-dropdown {
     position: relative;

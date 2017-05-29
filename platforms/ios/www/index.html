@@ -7,6 +7,7 @@
     <script src="lib/onsen/js/onsenui.js"></script>
     <!-- <script src="dist/ng-cordova.min.js"></script> -->
     <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/crypto-js.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jlinq.js"></script>
@@ -26,11 +27,12 @@
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="jsaes/jsaes.js"></script>
+
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
     <link rel="stylesheet" href="stylev2.css">
     <link href="lib/onsen/css/font/lato.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -47,7 +49,7 @@
             </center>
 
             <div id="footer">
-                <p class="text" style="background-color: #0c1117;">©2017 Campus Management Corp | All Rights
+                <p class="text" style="background-color: #0c1117;">©sanjay
                     Reserved</p>
             </div>
         </div>
@@ -73,26 +75,26 @@
 <script type="text/javascript">
     function fun_AllowOnlyAmountAndDot(txt) {
         //console.log(event)
-        var value = txt.value
-        console.log("value" + value)
-        if (value == "") txt.value = ""
+        var value = txt.value;
+        console.log("value" + value);
+        if (value == "") txt.value = "";
         //if(event.keyCode == 229) { return true }
         if ((event.keyCode > 47 && event.keyCode < 58) || event.keyCode == 46 || event.keyCode == 190) {
-            if (value.length > 4) return false
+            if (value.length > 4) return false;
             //if(value.indexOf(".") > 0 && value.split(".")[1].length == 2) return false
-            console.log("tru")
+            console.log("tru");
             return true;
         }
         else {
-            console.log("doin")
+            console.log("doin");
             //if(txt.value.length < value.length ) return true
-            console.log(txt.value)
-            if (isNaN(txt.value)) txt.value = value
+            console.log(txt.value);
+            if (isNaN(txt.value)) txt.value = value;
             setTimeout(function (txt) {
-            }, 50)
+            }, 50);
             event.keyCode = 0;
             //alert("Only Numbers with dot allowed !!");
-            console.log("false")
+            console.log("false");
             return false;
         }
     }

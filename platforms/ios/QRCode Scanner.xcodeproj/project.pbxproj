@@ -29,6 +29,14 @@
 		26360D29B53F4961A34BF237 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C18618FDC154E9E99281CE9 /* CoreVideo.framework */; };
 		4402419C3CFC4658B5C5C5E8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5387B0BB4F974492A44B08E0 /* QuartzCore.framework */; };
 		90E6CE50D9BC425B845681E2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3609FF551724487AA75AED2 /* CoreImage.framework */; };
+		940825E152FB4445A4179CEF /* CDVAppFeelReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FD453D856C584E448DF5E04F /* CDVAppFeelReachability.m */; };
+		2AA5457E80684B44BF41A7B9 /* AppFeelReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E775D3F1142F887D7D425 /* AppFeelReachability.m */; };
+		C1BE12F962DE4674B60376AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF821F76512A45B392B3F03A /* SystemConfiguration.framework */; };
+		418C0232E67242BF80DA0525 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF1B3B3B78A43DE9141D8F6 /* GoogleMobileAds.framework */; };
+		112EB12C91A54BFB8E04B492 /* CDVAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADCD8C1F8B40C6A4480DB2 /* CDVAdMobAds.m */; };
+		A37F76251F0B4F4B84AC7671 /* CDVAdMobAdsAdListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4014AA66C46EBAFC83D9C /* CDVAdMobAdsAdListener.m */; };
+		C3831793DC3D49729B24969F /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D7EC2D81A84B48A86C5F9A /* Toast+UIView.m */; };
+		904DD453317A4E61B6BD04D5 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CC226924602D4A008E677C34 /* Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +93,20 @@
 		6C18618FDC154E9E99281CE9 /* CoreVideo.framework */ = {isa = PBXFileReference; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		5387B0BB4F974492A44B08E0 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		E3609FF551724487AA75AED2 /* CoreImage.framework */ = {isa = PBXFileReference; name = "CoreImage.framework"; path = "System/Library/Frameworks/CoreImage.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		FD453D856C584E448DF5E04F /* CDVAppFeelReachability.m */ = {isa = PBXFileReference; name = "CDVAppFeelReachability.m"; path = "cordova-connectivity-monitor/CDVAppFeelReachability.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		489E775D3F1142F887D7D425 /* AppFeelReachability.m */ = {isa = PBXFileReference; name = "AppFeelReachability.m"; path = "cordova-connectivity-monitor/AppFeelReachability.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C0E2C91603ED4044901DBD65 /* CDVAppFeelReachability.h */ = {isa = PBXFileReference; name = "CDVAppFeelReachability.h"; path = "cordova-connectivity-monitor/CDVAppFeelReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		22D1DF01243B43F989D261A3 /* AppFeelReachability.h */ = {isa = PBXFileReference; name = "AppFeelReachability.h"; path = "cordova-connectivity-monitor/AppFeelReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		EF821F76512A45B392B3F03A /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		5FF1B3B3B78A43DE9141D8F6 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; name = "GoogleMobileAds.framework"; path = "QRCode Scanner/Plugins/cordova-libgoogleadmobads/GoogleMobileAds.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		13ADCD8C1F8B40C6A4480DB2 /* CDVAdMobAds.m */ = {isa = PBXFileReference; name = "CDVAdMobAds.m"; path = "cordova-admob/CDVAdMobAds.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		35E4014AA66C46EBAFC83D9C /* CDVAdMobAdsAdListener.m */ = {isa = PBXFileReference; name = "CDVAdMobAdsAdListener.m"; path = "cordova-admob/CDVAdMobAdsAdListener.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		CDB116C395014A4A940504DD /* CDVAdMobAds.h */ = {isa = PBXFileReference; name = "CDVAdMobAds.h"; path = "cordova-admob/CDVAdMobAds.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DF4A525773C749B6A9A8BB87 /* CDVAdMobAdsAdListener.h */ = {isa = PBXFileReference; name = "CDVAdMobAdsAdListener.h"; path = "cordova-admob/CDVAdMobAdsAdListener.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		93D7EC2D81A84B48A86C5F9A /* Toast+UIView.m */ = {isa = PBXFileReference; name = "Toast+UIView.m"; path = "cordova-plugin-x-toast/Toast+UIView.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		CC226924602D4A008E677C34 /* Toast.m */ = {isa = PBXFileReference; name = "Toast.m"; path = "cordova-plugin-x-toast/Toast.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		1B175DF0233D46EFBFF0756D /* Toast+UIView.h */ = {isa = PBXFileReference; name = "Toast+UIView.h"; path = "cordova-plugin-x-toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		BB002E6948EE4372AF381B17 /* Toast.h */ = {isa = PBXFileReference; name = "Toast.h"; path = "cordova-plugin-x-toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +121,8 @@
 				26360D29B53F4961A34BF237 /* CoreVideo.framework in Frameworks */,
 				4402419C3CFC4658B5C5C5E8 /* QuartzCore.framework in Frameworks */,
 				90E6CE50D9BC425B845681E2 /* CoreImage.framework in Frameworks */,
+				C1BE12F962DE4674B60376AA /* SystemConfiguration.framework in Frameworks */,
+				418C0232E67242BF80DA0525 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +202,8 @@
 				6C18618FDC154E9E99281CE9 /* CoreVideo.framework */,
 				5387B0BB4F974492A44B08E0 /* QuartzCore.framework */,
 				E3609FF551724487AA75AED2 /* CoreImage.framework */,
+				EF821F76512A45B392B3F03A /* SystemConfiguration.framework */,
+				5FF1B3B3B78A43DE9141D8F6 /* GoogleMobileAds.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +236,18 @@
 				23F46C1F063C4A9E860B0BD8 /* CDVBarcodeScanner.mm */,
 				55E73811F1594732BEC82E99 /* zxing-all-in-one.cpp */,
 				5027417A5C48454384B1DD70 /* zxing-all-in-one.h */,
+				FD453D856C584E448DF5E04F /* CDVAppFeelReachability.m */,
+				489E775D3F1142F887D7D425 /* AppFeelReachability.m */,
+				C0E2C91603ED4044901DBD65 /* CDVAppFeelReachability.h */,
+				22D1DF01243B43F989D261A3 /* AppFeelReachability.h */,
+				13ADCD8C1F8B40C6A4480DB2 /* CDVAdMobAds.m */,
+				35E4014AA66C46EBAFC83D9C /* CDVAdMobAdsAdListener.m */,
+				CDB116C395014A4A940504DD /* CDVAdMobAds.h */,
+				DF4A525773C749B6A9A8BB87 /* CDVAdMobAdsAdListener.h */,
+				93D7EC2D81A84B48A86C5F9A /* Toast+UIView.m */,
+				CC226924602D4A008E677C34 /* Toast.m */,
+				1B175DF0233D46EFBFF0756D /* Toast+UIView.h */,
+				BB002E6948EE4372AF381B17 /* Toast.h */,
 			);
 			name = Plugins;
 			path = "QRCode Scanner/Plugins";
@@ -329,6 +367,12 @@
 				0C5189A01A7847D3B9EC9A79 /* CDVInAppBrowser.m in Sources */,
 				AD8C26494F5E481FADF98085 /* CDVBarcodeScanner.mm in Resources */,
 				B4C661CB739A4ADDB7AC7782 /* zxing-all-in-one.cpp in Resources */,
+				940825E152FB4445A4179CEF /* CDVAppFeelReachability.m in Sources */,
+				2AA5457E80684B44BF41A7B9 /* AppFeelReachability.m in Sources */,
+				112EB12C91A54BFB8E04B492 /* CDVAdMobAds.m in Sources */,
+				A37F76251F0B4F4B84AC7671 /* CDVAdMobAdsAdListener.m in Sources */,
+				C3831793DC3D49729B24969F /* Toast+UIView.m in Sources */,
+				904DD453317A4E61B6BD04D5 /* Toast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +408,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "QRCode Scanner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"QRCode Scanner/Plugins/cordova-libgoogleadmobads\"",
+				);
 			};
 			name = Debug;
 		};
@@ -386,6 +434,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "QRCode Scanner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"QRCode Scanner/Plugins/cordova-libgoogleadmobads\"",
+				);
 			};
 			name = Release;
 		};

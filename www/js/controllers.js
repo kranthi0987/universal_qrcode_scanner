@@ -6,9 +6,8 @@ myApp.controllers = {
     // splash Page Controller //
     //////////////////////////
     splashPage: function (page) {
-        var currentPage = "";
-        document.addEventListener("deviceready", scan, false);
-
+        var isLoggedIn = true;
+        var splashTime = 1000;
         function onDeviceReady() {
             document.addEventListener("backbutton", function () {
                 var currentPage = "";
@@ -27,11 +26,11 @@ myApp.controllers = {
         var splashTimeCompleted = false;
         setTimeout(function () {
             splashTimeCompleted = true;
-            if (isLoggedIn()) {
-                scan()
+            if (isLoggedIn) {
+                document.addEventListener('deviceready', deviceready, false);
             }
             else {
-                scan()
+                document.addEventListener('deviceready', deviceready, false);
             }
         }, splashTime);
         initOperatingSystem();
@@ -148,31 +147,8 @@ myApp.controllers = {
     // certificate Page Controller //
     ////////////////////////
     cerficateresult: function (page) {
-        console.log(page.data);
-        var data = page.data;
-        $('#name').html(data.Salutation + data.CandidateName);
-        $("#Sector").html(data.SectorName);
-        $("#CandidateName").html(data.CandidateName);
-        $("#Qpnumber").html(data.JobRoleCode);
-        $("#jobrole").html(data.JobRole);
-        $("#NSQFlevel").html(data.NSQF);
-        $("#Grade").html(data.Grade);
-        $("#DateOfIssuance").html(data.DateOfIssuance);
-
-        $('#back').click(function () {
-            document.querySelector('#myNavigator').popPage();
-            scan()
-        });
-
-        $(".ion-ios-close-empty").click(function () {
-            document.querySelector('#myNavigator').popPage();
-            scan()
-        });
-
-        $(document).ready(function () {
-            $('select').material_select();
-        });
-    }, ////////////////////////////
+    },
+    ////////////////////////////
     // New Task Page Controller //
     ////////////////////////////
     newTaskPage: function (page) {
@@ -181,10 +157,6 @@ myApp.controllers = {
     ///////////////////////////////
     detailsTaskPage: function (page) {
 
-    }, ////////////////////////////////
-    // Form List Task Page Controller //
-    ///////////////////////////////
-    formsListPage: function (page) {
     }, ////////////////////////////////
     // Form Page Controller //
     ///////////////////////////////

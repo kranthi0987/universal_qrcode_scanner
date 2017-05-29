@@ -26,7 +26,6 @@ ons-splitter-side[side="left"] {
     color: #666
 }
 
-
 /********************
  *** Animation CSS ***
  ********************/
@@ -231,7 +230,6 @@ ons-toolbar.navigation-bar {
     background: blue;
 }
 
-
 /* Sidebar */
 
 .sidebar-header-background {
@@ -338,7 +336,7 @@ ons-toolbar.navigation-bar {
     height: 150px;
     top: 25px;
     left: 50%;
-    margin-left: -170px!important;
+    margin-left: -170px !important;
     opacity: 0.7;
 }
 
@@ -357,7 +355,7 @@ ons-toolbar.navigation-bar {
     height: 150px;
     top: 25px;
     right: 50%;
-    margin-right: -170px!important;
+    margin-right: -170px !important;
     opacity: 0.7;
 }
 
@@ -430,8 +428,8 @@ ons-toolbar.navigation-bar {
 }
 
 .footer-socials a {
-    margin-left: 2px!important;
-    margin-right: 2px!important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
 }
 
 .header-dark {
@@ -456,15 +454,15 @@ ons-toolbar.navigation-bar {
 }
 
 .header-full {
-    left: 0px!important;
-    top: 0px!important;
-    right: 0px!important;
+    left: 0px !important;
+    top: 0px !important;
+    right: 0px !important;
 }
 
 .header-active {
-    top: 0px!important;
-    left: 0px!important;
-    right: 0px!important;
+    top: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
 }
 
 .header-icon-1 {
@@ -507,7 +505,7 @@ ons-toolbar.navigation-bar {
 }
 
 .header-icon .fa-plus {
-    line-height: 60px!important;
+    line-height: 60px !important;
     font-size: 12px;
 }
 
@@ -532,7 +530,7 @@ ons-toolbar.navigation-bar {
     right: 0px;
     bottom: 0px;
     pointer-events: all;
-    overflow: hidden!important;
+    overflow: hidden !important;
     transition: all 250ms ease;
 }
 
@@ -607,11 +605,11 @@ ons-toolbar.navigation-bar {
 }
 
 .footer-menu .fa-mobile {
-    font-size: 24px!important;
+    font-size: 24px !important;
 }
 
 .footer-menu-open .fa-mobile {
-    font-size: 26px!important;
+    font-size: 26px !important;
 }
 
 .footer-menu-item i {
@@ -630,7 +628,7 @@ ons-toolbar.navigation-bar {
 .footer-menu-item em {
     display: block;
     font-size: 14px;
-    padding: 3px 14px!important;
+    padding: 3px 14px !important;
     font-style: normal;
     font-weight: 500;
     position: absolute;
@@ -677,8 +675,8 @@ ons-toolbar.navigation-bar {
 }
 
 .footer-menu-item i {
-    color: #FFFFFF!important;
-    border: none!important;
+    color: #FFFFFF !important;
+    border: none !important;
 }
 
 .footer-controls {
@@ -707,8 +705,8 @@ ons-toolbar.navigation-bar {
 }
 
 .light-footer-menu .active-menu em {
-    color: #000000!important;
-    font-weight: 700!important;
+    color: #000000 !important;
+    font-weight: 700 !important;
     font-size: 16px
 }
 
@@ -719,8 +717,8 @@ ons-toolbar.navigation-bar {
 
 .dark-footer-menu .footer-menu-item em {
     color: #FFFFFF;
-    box-shadow: none!important;
-    background-color: transparent!important;
+    box-shadow: none !important;
+    background-color: transparent !important;
     255,
     255,
     0.6);
@@ -737,19 +735,19 @@ ons-toolbar.navigation-bar {
 }
 
 .dark-footer-menu .active-menu em {
-    color: #FFFFFF!important;
-    font-weight: 700!important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
     font-size: 15px
 }
 
 .remove-menu {
-    opacity: 0!important;
-    pointer-events: none!important;
+    opacity: 0 !important;
+    pointer-events: none !important;
     transition: all 250ms ease;
 }
 
 .remove-wrapper {
-    display: none!important;
+    display: none !important;
 }
 
 .footer-menu-open,
@@ -761,12 +759,12 @@ ons-toolbar.navigation-bar {
 }
 
 .footer-menu-close {
-    z-index: 9999!important;
+    z-index: 9999 !important;
 }
 
 .footer-menu-open i,
 .footer-menu-close i {
-    overflow: hidden!important;
+    overflow: hidden !important;
     border-radius: 56px;
     line-height: 56px;
     height: 56px;
@@ -786,7 +784,7 @@ ons-toolbar.navigation-bar {
     text-align: right;
     display: block;
     font-size: 13px;
-    padding: 3px 14px!important;
+    padding: 3px 14px !important;
     font-style: normal;
     line-height: 25px;
     border-radius: 10px;
@@ -1022,6 +1020,7 @@ div#syncUpContainer {
     height: 100%;
     overflow: auto;
 }
+
 div#homeNewsContainer {
     height: 100%;
 }
@@ -1281,7 +1280,6 @@ button.btn.searchStudent.waves-effect {
     bottom: 0px;
 }
 
-
 #updateAction {
     position: Fixed;
     width: 100%;
@@ -1293,80 +1291,100 @@ button.btn.searchStudent.waves-effect {
     bottom: 0px;
 }
 
-
 /*p#tcname {*/
 
-font-weight: bold;
+font-weight: bold
+
+;
 
 }
 div#detailsList {
     max-height: 332px;
     overflow-y: scroll;
 }
+
 #marksUpdateList h3 {
     padding-left: 10px;
     background-color: #50d2c2;
     padding: 10px;
 }
+
 #marksUpdateList .row {
     margin: 5px 25px;
 }
+
 #marksUpdateList {
     padding: 0px 15px;
 }
+
 .studentslist {
     overflow-y: scroll;
 }
+
 .side-nav {
     padding: 0px;
 }
+
 #marksUpdateList h3 {
     padding-left: 10px;
     background-color: #12a794;
     padding: 10px;
     color: white;
 }
-#marksUpdateList .card {}
+
+#marksUpdateList .card {
+}
+
 #scheduleDetailsContainer .actions {
     position: absolute;
     bottom: -19px;
     width: 100%;
 }
+
 div#scheduleCandidatesContainer {
     height: 100%;
 }
+
 div#scheduleCandidatesContainer .studentslist {
     height: 100%;
 }
+
 .studentslist {
     over flow-y: scroll;
     hei ght: 100%;
 }
+
 div#scheduleDetailsContainer {
     overflow: auto;
     height: 100%;
 }
+
 div#addressdetails {
     margin-bottom: 70px;
 }
+
 html,
 body {
     height: 100%;
     width: 100%;
     margin: 0;
 }
+
 #marksUpdateList {
     padding: 0px 15px;
     height: 74%;
     overflow-y: auto;
 }
+
 div#scheduleCandidatesMarksUpdateContainer {
     height: 100%;
 }
+
 .toolbar-button--material:active {
     opacity: 1;
     background-color: #42a9da;
 }
+
 #schduleList .card h3 {
     margin: 5px;
     font-size: 15px;
@@ -1385,13 +1403,16 @@ div#scheduleContainer .contentview {
     height: 100%;
     overflow: auto;
 }
+
 div#overDueContainer {
     height: 100%;
 }
+
 .overDuecontentview {
     height: 100%;
     overflow: auto;
 }
+
 img#mapIcon {
     width: 100%;
 }
@@ -1420,6 +1441,7 @@ ons-switch.switch.switch--material {
     font-size: 35px;
     color: #1fc2ff;
 }
+
 #dashboardStats .card {
     width: 100%;
     margin: 0px;
@@ -1438,12 +1460,12 @@ div.actions div {
 #marksUpdateList input.text-input.text-input--material {
     width: 120px;
 }
+
 #marksUpdateList .card ons-input {
     margin-top: 10px;
 }
 
-
-#scheduleCandidatesContainer .card  {
+#scheduleCandidatesContainer .card {
     border-left-color: #F19A81;
     border-left-width: 5px;
     border-left-style: solid;
@@ -1464,11 +1486,12 @@ div.actions div {
     border-left-color: rgba(128, 57, 0, 0.7);
     border-left-width: 5px;
     border-left-style: solid;
-    
+
 }
+
 #marksUpdateList .nonCore {
     border-left-color: rgba(0, 128, 0, 0.62);
     border-left-width: 5px;
     border-left-style: solid;
-    
+
 }

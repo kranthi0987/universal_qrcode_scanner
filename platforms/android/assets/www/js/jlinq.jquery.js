@@ -46,7 +46,9 @@
         //converts a jQuery object into an array
         toArray: function (obj) {
             var records = [];
-            obj.each(function (i, v) { records.push($(v)); });
+            obj.each(function (i, v) {
+                records.push($(v));
+            });
             return records;
         }
 

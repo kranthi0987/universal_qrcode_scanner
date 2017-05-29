@@ -1,17 +1,23 @@
 {
-  "name": "com.nsdc.qrcodescanner",
-  "version": "1.0.3",
-  "displayName": "QRCode Scanner",
-  "cordova": {
-    "platforms": [
-      "android"
-    ],
-    "plugins": {
-      "cordova-plugin-whitelist": {}
+    "name": "com.nsdc.qrcodescanner",
+    "version": "1.0.3",
+    "displayName": "QRCode Scanner",
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-admob": {},
+            "cordova-plugin-x-toast": {}
+        }
+    },
+    "dependencies": {
+        "cordova-admob": "^4.1.16",
+        "cordova-android": "^6.2.3",
+        "cordova-connectivity-monitor": "^1.2.2",
+        "cordova-libgoogleadmobads": "git+https://github.com/appfeel/google-iosadmobads.git",
+        "cordova-plugin-whitelist": "1",
+        "cordova-plugin-x-toast": "^2.6.0"
     }
-  },
-  "dependencies": {
-    "cordova-android": "^6.2.3",
-    "cordova-plugin-whitelist": "1"
-  }
 }
