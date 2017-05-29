@@ -7,9 +7,10 @@ function deviceready() {
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
-            document.querySelector('#myNavigator').pushPage('html/resultpage.html');
             document.getElementById('resultbox').value = result.text;
             document.getElementById('typeof').value = result.format;
+            document.querySelector('#myNavigator').pushPage('html/resultpage.html');
+
         },
         function (error) {
             alert("Scanning failed: " + error);
