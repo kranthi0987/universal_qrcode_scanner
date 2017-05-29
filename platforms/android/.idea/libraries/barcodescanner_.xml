@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="barcodescanner-">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/fde90ac370e9e3b34f5a9ebd0f7f8aef2815c6ea/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/fde90ac370e9e3b34f5a9ebd0f7f8aef2815c6ea/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
