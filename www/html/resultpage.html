@@ -1,0 +1,14 @@
+<ons-page id="first-page">
+    <ons-toolbar>
+        <div class="center">QR code scanner</div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center">
+        <input type="text" id="typeof" readonly style="margin-top: 10%;"/>
+        <textarea id="resultbox" rows="6" cols="30" readonly style="margin-top: 10%;"></textarea> <br>
+        <ons-button onclick="CopyToClipboard()"> Copy Text</ons-button>
+        <ons-button onclick="deviceready()"> Scan Again</ons-button>
+
+
+    </div>
+</ons-page>
